@@ -22,5 +22,5 @@ class AMContractInterface:
     def get_total_invested_ether(self):
         return self._am_ico_contract.functions.totalInvestment().call()
 
-    def get_transaction_data(self, referer_address):
+    def get_transaction_data(self, referer_address="0x0000000000000000000000000000000000000000"):
         return self._am_ico_contract.encodeABI(fn_name='buyTokensWithRef', args=[referer_address])
